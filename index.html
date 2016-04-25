@@ -20,20 +20,21 @@
       <button ng-click="loadData()">loadData</button>
        
        <h1>Weather</h1>
-       <div>{{data}}</div>
+       <!--div>{{data}}</div-->
        
        
        <hr/>
          <ul>
            <!-- voor elk element in mijn data wordt een list item gecreêerd-->
-           <li ng-repeat="li in data">
-               <span>{{li.dt}}</span>
-                {{li.weather[0].description}}
-               {{li}}
+           <li ng-repeat="forecast in forecasts">
+               <span>{{forecast.description}}</span><br/>
+                <span>{{forecast.date}}</span>
+               
            </li>
        </ul>
       
          <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+       <script src="node_modules/momentjs/moment.js"></script>
        <script src="app.js"></script>
        <script src="calculatorService.js"></script>
        <script src="controller.js"></script>
