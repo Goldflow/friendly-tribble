@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app="app">
+   
+   <head>
+    <title>Calculator + http server from Open Web API</title>
+   </head>
+   
+   <body ng-controller="controller">
+     
+      <h1> calculate </h1> 
+          
+          <input type="number" ng-model="factor1">
+          <br/>      <input type="number" ng-model="factor2">
+          <br/>      <input type="number" ng-model="sum">
+          <br/>
+      
+       <button ng-click="getSum()">calculate</button>
+      <button ng-click="loadData()">loadData</button>
+       
+       <div>{{data}}</div>
+      
+         <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+       <script src="app.js"></script>
+       <script src="calculatorService.js"></script>
+       <script src="controller.js"></script>
+       <script src="User.js"></script>
+       
+       
+   </body>
+</html>
