@@ -15,6 +15,14 @@ app.controller('controller', function ($scope, calculatorService, $http) {
     $scope.data = "";
     //*
     $scope.loadData = function () {
+        
+        function onLoadSucess(response) {
+                $scope.data = response;
+            };
+        
+        function onLoadFailure(response) {
+                console.log(response);
+            };
 
         //bij de functie loadData op te roepen, proberen we de open weather map te kijken
         //wat het weer isin Brussel momenteel
@@ -22,13 +30,9 @@ app.controller('controller', function ($scope, calculatorService, $http) {
             )
             //het kan even duren, maar na een bepaalde wachttijd/delay krijgen we een response:
             //in het geval dat we succesvole response hebben, gaan we die ons data object steken
-            .then(function onLoadSucess(response) {
-                $scope.data = response;
-            })
+            .then(onLoadSucess)
             //in het geval we geen succesvolle response hebben, gaan we die printen in console
-            .catch(function onLoadFailure(response) {
-                console.log(response);
-            });
+            .catch(onLoadFailure);
     }
 
 
