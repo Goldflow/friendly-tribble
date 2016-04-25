@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.5.5"
+    "angular": "^1.5.5",
+    "momentjs": "^1.1.6"
   }
 }

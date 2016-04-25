@@ -12,21 +12,22 @@ app.controller('controller', function ($scope, calculatorService, $http) {
         //$scope.factor2 = 
     }
     //hiern gaan we de response van de geladen data insteken
-    $scope.data = "";
+    //$scope.data = "";
     //*
     $scope.loadData = function () {
         
         function onLoadSucess(response) {
-                $scope.data = response;
+                $scope.data = response.data;
+                console.log(response.data);
             };
         
         function onLoadFailure(response) {
-                console.log(response);
+                console.log(response.data);
             };
 
         //bij de functie loadData op te roepen, proberen we de open weather map te kijken
         //wat het weer isin Brussel momenteel
-        return $http.get('http://api.openweathermap.org/data/2.5/weather?q=Brussels&appid=6441bfafc9de09c3e3425c8283e96726'
+        return $http.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=6441bfafc9de09c3e3425c8283e96726'
             )
             //het kan even duren, maar na een bepaalde wachttijd/delay krijgen we een response:
             //in het geval dat we succesvole response hebben, gaan we die ons data object steken
